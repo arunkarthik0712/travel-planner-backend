@@ -17,7 +17,25 @@ connectDB();
 
 const app = express();
 
-app.use(cors({ origin: "https://arunkarthik0710-travel-planner.netlify.app" }));
+const allowedOrigins = [
+  "https://arunkarthik0710-travel-planner.netlify.app", // Web (Netlify)
+  "capacitor://localhost", // iOS App
+  "http://localhost", // Android Emulator
+  "http://192.168.1.100", // Mobile device (replace with your local IP)
+  "http://com.travelplanner.app://localhost", // Android & iOS (real devices)
+];
+
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+  })
+);
 app.use(express.json());
 
 app.use("/api/auth", authRoutes);
