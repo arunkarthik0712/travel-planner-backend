@@ -23,7 +23,8 @@ const allowedOrigins = [
   "http://localhost", // Android Emulator
   "https://localhost", // Localhost (HTTPS)
   "http://192.168.1.100", // Mobile device (replace with your local IP)
-  "http://com.travelplanner.app://localhost", // Android & iOS (real devices)
+  "http://com.travelplanner.app://localhost",
+  "https://com.travelplanner.app", // Android & iOS (real devices)
 ];
 
 app.use(
