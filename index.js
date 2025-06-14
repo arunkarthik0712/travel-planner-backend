@@ -21,6 +21,7 @@ const allowedOrigins = [
   "https://arunkarthik0710-travel-planner.netlify.app", // Web (Netlify)
   "capacitor://localhost", // iOS App
   "http://localhost:3000", // Localhost
+  "http://127.0.0.1:3000", // Localhost (alternative)
   "http://localhost", // Android Emulator
   "https://localhost", // Localhost (HTTPS)
   "http://192.168.1.100", // Mobile device (replace with your local IP)
@@ -31,7 +32,6 @@ const allowedOrigins = [
 app.use(
   cors({
     origin: function (origin, callback) {
-      console.log("Origin:", origin);
       if (
         !origin ||
         allowedOrigins.includes(origin) ||
