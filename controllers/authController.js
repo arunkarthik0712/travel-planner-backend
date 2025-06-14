@@ -29,7 +29,7 @@ const registerUser = async (req, res) => {
     });
 
     const mailOptions = {
-      from: "no-reply@travelplanner.com",
+      from: "no-reply@travelplanner.com <no-reply@travelplanner.com>",
       to: user.email,
       subject: "Account Activation",
       html: `
@@ -186,7 +186,7 @@ const forgotPassword = async (req, res) => {
     });
 
     const mailOptions = {
-      from: "no-reply@travelplanner.com",
+      from: "no-reply@travelplanner.com <no-reply@travelplanner.com>",
       to: user.email,
       subject: "Password Reset Request",
       html: `
