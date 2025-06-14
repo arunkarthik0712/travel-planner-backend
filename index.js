@@ -20,6 +20,7 @@ const app = express();
 const allowedOrigins = [
   "https://arunkarthik0710-travel-planner.netlify.app", // Web (Netlify)
   "capacitor://localhost", // iOS App
+  "http://localhost:3000", // Localhost
   "http://localhost", // Android Emulator
   "https://localhost", // Localhost (HTTPS)
   "http://192.168.1.100", // Mobile device (replace with your local IP)
